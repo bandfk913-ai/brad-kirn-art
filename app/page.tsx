@@ -4,41 +4,37 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-[#E5E5E5]">
-        <div className="relative z-10 text-center px-4">
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-            className="text-[10px] uppercase tracking-[0.5em] mb-4 opacity-60"
-          >
-            Original Abstract Works
-          </motion.p>
+    <div className="flex flex-col">
+      {/* Immersive Hero */}
+      <section className="relative h-[80vh] bg-neutral-50 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-90">
+           {/* Update this with your best texture close-up */}
+           <img 
+            src="/hero-art.jpg" 
+            alt="Brad Kirn Abstract Detail" 
+            className="w-full h-full object-cover grayscale-[20%]"
+           />
+        </div>
+        <div className="relative z-10 text-center max-w-2xl px-6">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="font-serif text-6xl md:text-8xl mb-8 tracking-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-serif text-5xl md:text-7xl mb-8 leading-tight"
           >
-            Brad Kirn
+            Motion & <br/>Balance
           </motion.h1>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-            <Link href="/gallery" className="border border-black px-10 py-4 text-[10px] uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all">
-              Explore Collection
-            </Link>
-          </motion.div>
+          <Link href="/original-artwork" className="inline-block bg-black text-white px-12 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-neutral-800 transition-all">
+            View Collection
+          </Link>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-24 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-          <div className="aspect-[4/5] bg-gray-200" /> {/* Replace with featured art img */}
-          <div>
-            <h2 className="font-serif text-4xl mb-6 italic">"Bumps along the way."</h2>
-            <p className="text-sm leading-relaxed opacity-70 mb-8 max-w-md">
-              A journey of motion, texture, and resilience. Each piece represents a moment of finding balance 
-              within the chaos of the creative process.
-            </p>
-            <Link href="/about" className="text-[10px] uppercase tracking-widest border-b border-black pb-1">Read the Story</Link>
-          </div>
-        </div>
+      {/* Philosophy Section */}
+      <section className="max-w-4xl mx-auto py-32 px-8 text-center">
+        <h2 className="text-[10px] uppercase tracking-[0.6em] text-neutral-400 mb-10 italic">Bumps along the way</h2>
+        <p className="font-serif text-2xl md:text-3xl leading-relaxed text-neutral-800">
+          "Inspiration comes in many forms if we are open to it, and mine comes from the compositions of shapes, colors, sounds, and smells that surround us all daily."
+        </p>
       </section>
     </div>
   );
